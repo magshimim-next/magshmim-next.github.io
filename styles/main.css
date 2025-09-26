@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eaeaea; /* light background behind page */
+}
+
+.inter-Black {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Page wrapper */
+.page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #f4faff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+/* Floating top bar */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1240px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.top-bar .logo {
+  width: 120px;
+  margin: 5px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  object-fit: contain;
+  cursor: pointer;
+  display: flex;
+}
+
+.top-bar .actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.top-bar .links-logos {
+  height: 25px;
+  border-radius: 6px;
+}
+
+#Magshimim-Cv-Logo 
+{
+  border-radius: 12px;
+  padding: 2px 6px;
+  background-color: #457b9d;
+}
+
+.top-bar .links-logos img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  display: block;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.image-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-bar button {
+  width: 130px;
+  height: 35px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  border-width: 3px;
+  border-color: #0B4870;
+  background: #8098C6;
+  color: #F2F2F2;
+  font-family: 'inter', sans-serif;
+  font-weight: 700;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Sections */
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  min-height: 400px;
+}
+
+section:nth-child(odd) {
+  background: #d8f0f4;
+}
+
+.text-block {
+  max-width: 45%;
+}
+
+.text-block h2 {
+  margin-top: 0;
+  color: #2c5ca9;
+}
+
+.black-box {
+  background: black;
+  border-radius: 10px;
+}
+
+/* Specific placeholder sizes */
+.hero-img {
+  width: 400px;
+  height: 280px;
+}
+
+.target-img {
+  width: 300px;
+  height: 200px;
+}
+
+.magshimim-img {
+  width: 60%;
+  height: auto;
+  filter: drop-shadow(5px 5px 0.15rem #0101014f);
+}
+
+.join-img {
+  width: 250px;
+  height: 250px;
+}
+
+/* Form styling */
+.form-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  width: 300px;
+}
+
+.form-box h3 {
+  margin-top: 0;
+  color: #2c5ca9;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 10px;
+  background: #2c5ca9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Spacing for fixed header */
+.spacer {
+  height: 1 0px;
+}
