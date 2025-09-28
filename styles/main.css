@@ -4,8 +4,16 @@
   color: #0b4870;
 }
 
+.highlight-primary-color {
+  color: #457B9D;
+}
+
 .secondary-color {
   color: #457B9D;
+}
+
+.highlight-secondary-color {
+  color: #63A5E2;
 }
 
 .snow-color {
@@ -88,6 +96,10 @@ body {
   height: 30px;
 }
 
+#hero-section p {
+  width: 75%;
+}
+
 .Magshimim-Cv-Logo 
 {
   border-radius: 16px;
@@ -102,8 +114,8 @@ img {
 }
 
 .image-box {
-  width: 100%;
-  height: 100%;
+  width: 45%;
+  max-height: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,8 +155,8 @@ section {
 .text-block p {
   margin-top: 5px;
   font-size: 24px;
-  line-height: 30px;
-  width: 75%;
+  line-height: 34px;
+  width: 90%;
 }
 
 
@@ -179,23 +191,26 @@ background-image: linear-gradient(to right, #a5d6d8, #81a7a9);
 .black-box {
   background: black;
   border-radius: 10px;
+  width: 300px;
+  height: 300px;
 }
 
-.target-img {
-  width: 300px;
-  height: 200px;
-}
+/* .target-img {
+
+} */
 
 .magshimim-img {
-  width: 60%;
-  height: auto;
   filter: drop-shadow(5px 5px 0.15rem #0101014f);
 }
 
 .join-img {
+  width: 90%;
+}
+
+/* .join-img {
   width: 250px;
   height: 250px;
-}
+} */
 
 /* Form styling */
 .form-box {
@@ -232,4 +247,13 @@ background-image: linear-gradient(to right, #a5d6d8, #81a7a9);
 /* Spacing for fixed header */
 .spacer {
   height: 1 0px;
+}
+
+/* Positioning in divs*/
+.center {
+    margin:auto;
+}
+
+.center-text {
+    text-align: center;
 }
