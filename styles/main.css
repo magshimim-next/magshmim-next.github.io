@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+.primary-color {
+  color: #0b4870;
+}
+
+.secondary-color {
+  color: #457B9D;
+}
+
+.snow-color {
+  color: #F1FAEE;
+}
+
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -24,12 +36,12 @@ body {
 
 /* Floating top bar */
 .top-bar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
   width: 100%;
   max-width: 1240px;
+  min-height: 6vh;
   background: white;
   border-bottom: 1px solid #ddd;
   padding: 10px 20px;
@@ -39,12 +51,19 @@ body {
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-
 .top-bar .logo {
   width: 120px;
   margin: 5px 0;
   align-items: center;
   justify-content: center;
+}
+
+.top-bar .links-logos img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  display: block;
 }
 
 .logo img {
@@ -74,14 +93,6 @@ body {
   border-radius: 16px;
   padding: 2px 6px;
   background-color: #457b9d;
-}
-
-.top-bar .links-logos img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  cursor: pointer;
-  display: block;
 }
 
 img {
@@ -119,8 +130,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 5%;
-  min-height: 630px;
+  padding: 50px 5%;
+  min-height: 69vh;
 }
 
 .text-block h2 {
@@ -148,7 +159,7 @@ background-image: linear-gradient(to right, #a5d6d8, #81a7a9);
 /* Specific placeholder sizes */
 .hero-img {
   width: 45%;
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 
@@ -158,13 +169,11 @@ background-image: linear-gradient(to right, #a5d6d8, #81a7a9);
 
 #hero-section .text-block h2 {
   font-weight: 800;
-  color: #0B4870;
 }
 
 #hero-section .text-block p {
   font-weight: 500;
   line-height: auto;
-  color: #457B9D;
 }
 
 .black-box {
@@ -223,8 +232,4 @@ background-image: linear-gradient(to right, #a5d6d8, #81a7a9);
 /* Spacing for fixed header */
 .spacer {
   height: 1 0px;
-}
-
-.text-color-white {
-  color: #F1FAEE;
 }
