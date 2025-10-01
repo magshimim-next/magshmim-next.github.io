@@ -104,7 +104,13 @@ body {
 {
   border-radius: 12px;
   padding: 2px 6px;
+  transition: background-color 0.3s ease;
   background-color: #457b9d;
+}
+
+.Magshimim-Cv-Logo:hover
+{
+  background-color: #63a5e2;
 }
 
 img {
@@ -213,7 +219,7 @@ background-image: linear-gradient(to right, #a5d6d8, #81a7a9);
 } */
 
 /* Form styling */
-.form-box {
+/* .form-box {
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -242,6 +248,60 @@ background-image: linear-gradient(to right, #a5d6d8, #81a7a9);
   border: none;
   border-radius: 5px;
   cursor: pointer;
+} */
+
+.form-box {
+  background: #F4F4F4;
+  width: 45vmin;
+  padding: 0 5vmin;
+  border: 3px solid #3D3D3D;
+  border-radius: 2vmin;
+  box-shadow: 1vmin 1vmin 5px rgba(0,0,0,0.3);
+  text-align: center;
+  height: 48vh;
+}
+
+.form-box h1 {
+  font-size: 5vmin;
+  margin-bottom: 4vmin;
+}
+
+.form-box label {
+  display: block;
+  font-weight: bolder;
+  text-align: left;
+  margin: 2vmin 0 1vmin;
+  font-size: 2.5vmin;
+}
+
+.form-box input[type="text"], 
+.form-box input[type="email"] {
+  width: 100%;
+  padding: 5px;
+  border-radius: 1vmin;
+  border: 0.3vmin solid #3D3D3D;
+  font-size: 24px;
+  background: #e6e6e6;
+  box-sizing: border-box;
+}
+
+.form-box button {
+  margin-top: 3vmin;
+  padding: 11px 4vmin;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #8098C6;
+  border: 0.3vmin solid #3D3D3D;
+  border-radius: 1vmin;
+  width: 65%;
+  color: #F4F4F4;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.form-box button:hover {
+  background-color: #7b95b8;
 }
 
 /* Spacing for fixed header */
