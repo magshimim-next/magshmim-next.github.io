@@ -317,3 +317,7 @@ background-image: linear-gradient(to right, #a5d6d8, #81a7a9);
 .center-text {
     text-align: center;
 }
+
+.community-graphs {
+  width: 45%;
+}

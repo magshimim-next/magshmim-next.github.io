@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Magshimim Next - Layout</title>
   <link rel="icon" type="image/x-icon" href="/assets/images/Logo.ico">
-
+<script src=" https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js "></script>
   <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
 
   <div class="page-container">
@@ -14,9 +16,15 @@
     <div class="top-bar">
       <div class="logo"><img src="assets/images/Magshimim-next-logo.png"></div>
       <div class="actions">
-        <a href="https://cv.magshimim-next.com/"><div class="links-logos Magshimim-Cv-Logo"><img src="assets/images/Magshimim-CV-Logo.png"/></div></a> 
-        <a href="https://www.instagram.com/magshimim.next/"><div class="links-logos"><img src="assets/images/instagram-logo.png"/></div></a>  
-        <a href="https://www.linkedin.com/company/magshimim-next"><div class="links-logos"><img src="assets/images/linkedin-logo.png"/></div></a> 
+        <a href="https://cv.magshimim-next.com/">
+          <div class="links-logos Magshimim-Cv-Logo"><img src="assets/images/Magshimim-CV-Logo.png" /></div>
+        </a>
+        <a href="https://www.instagram.com/magshimim.next/">
+          <div class="links-logos"><img src="assets/images/instagram-logo.png" /></div>
+        </a>
+        <a href="https://www.linkedin.com/company/magshimim-next">
+          <div class="links-logos"><img src="assets/images/linkedin-logo.png" /></div>
+        </a>
         <!--<button>Login</button>-->
       </div>
     </div>
@@ -30,25 +38,33 @@
           <span class="primary-color">Magshimim</span>
           <span class="snow-color">Next</span>
         </h2>
-        <p class="secondary-color">The community for the alumni and alumnae of "Magshimim", an Israeli Cyber Education Center's program.</p>
-      
+        <p class="secondary-color">The community for the alumni and alumnae of "Magshimim", an Israeli Cyber Education
+          Center's program.</p>
+
         <div class="actions">
-        <a href="https://cv.magshimim-next.com/"><div class="links-logos Magshimim-Cv-Logo"><img src="assets/images/Magshimim-CV-Logo.png"/></div></a>
-        <a href="https://www.instagram.com/magshimim.next/"><div class="links-logos"><img src="assets/images/instagram-logo.png"/></div></a>
-        <a href="https://www.linkedin.com/company/magshimim-next"><div class="links-logos"><img src="assets/images/linkedin-logo.png"/></div></a>
-      
+          <a href="https://cv.magshimim-next.com/">
+            <div class="links-logos Magshimim-Cv-Logo"><img src="assets/images/Magshimim-CV-Logo.png" /></div>
+          </a>
+          <a href="https://www.instagram.com/magshimim.next/">
+            <div class="links-logos"><img src="assets/images/instagram-logo.png" /></div>
+          </a>
+          <a href="https://www.linkedin.com/company/magshimim-next">
+            <div class="links-logos"><img src="assets/images/linkedin-logo.png" /></div>
+          </a>
+
+        </div>
       </div>
-    </div>
-    <div class="image-box hero-img"><img src="assets/SVGs/developer-team.svg"></div>  
-  </section>
+      <div class="image-box hero-img"><img src="assets/SVGs/developer-team.svg"></div>
+    </section>
 
     <!-- Target Section -->
     <section>
       <div class="image-box target-img"><img src="assets//SVGs/Magshimim-Next-logo.svg"></div>
       <div class="text-block">
         <h2 class="highlight-primary-color">Our <span class="highlight-secondary-color">Target</span></h2>
-        <p class="secondary-color">At Magshimim Next, Our mission is to offer a community to the graduates of the Magshimim program,
-           and help them in their day to day life and struggles, mainly work, career and education.</p>
+        <p class="secondary-color">At Magshimim Next, Our mission is to offer a community to the graduates of the
+          Magshimim program,
+          and help them in their day to day life and struggles, mainly work, career and education.</p>
       </div>
     </section>
 
@@ -56,18 +72,25 @@
     <section>
       <div class="text-block">
         <h2 class="highlight-primary-color">Magshimim</h2>
-        <p class="secondary-color">The National Cyber Program has been operating since 2010 in the geographic and social periphery of Israel as the "National Cyber Program",
-           with the aim of encouraging curious and ambitious youth to learn in-depth professional content in the fields of computers and cyber.</p>
+        <p class="secondary-color">The National Cyber Program has been operating since 2010 in the geographic and social
+          periphery of Israel as the "National Cyber Program",
+          with the aim of encouraging curious and ambitious youth to learn in-depth professional content in the fields
+          of computers and cyber.</p>
       </div>
       <div class="image-box magshimim-img"><img src="assets/images/Magshmim-logo.png"></div>
     </section>
 
-    <!-- Magshimim Section -->
+    <!-- Community charts Section -->
     <section>
-      <div class="black-box community-graphs"></div>
+      <div class="community-graphs">
+        <canvas id="myChart">
+        </canvas>
+      </div>
       <div class="text-block">
         <h2 class="primary-color">The Community</h2>
-        <p class="secondary-color">At Magshimim Next, Our mission is to offer a community to the graduates of the Magshimim program, and help them in their day to day life and struggles, mainly work, career and education.</p>
+        <p class="secondary-color">At Magshimim Next, Our mission is to offer a community to the graduates of the
+          Magshimim program, and help them in their day to day life and struggles, mainly work, career and education.
+        </p>
       </div>
     </section>
 
@@ -100,8 +123,10 @@
       </div> -->
     </section>
   </div>
-
+  
 </body>
+
+<script src="scripts/CommunityCharts.js"></script>
 </html>
 
 <!--Never Forget "Yori the bear"-->
