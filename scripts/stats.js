@@ -38,19 +38,17 @@ const container = document.getElementById("cards-container");
 statsCards.forEach((stat) => {
   const card = document.createElement("div");
   card.className =
-    "p-6 bg-white rounded-lg border shadow-sm hover:shadow-lg transition-all duration-300";
+    "card-background";
 
   card.innerHTML = `
-    <div class="flex items-center justify-between mb-4">
-      <div class="p-3 rounded-lg bg-${stat.color}/20 text-${
-    stat.color
-  } text-xl">
+    <div class="card-img">
+      <div class="card-img-insider bg-${stat.color}">
         ${icons[stat.icon] || "❔"}
       </div>
     </div>
     <div class="space-y-1">
-      <p class="text-2xl font-bold text-gray-800">${stat.value}</p>
-      <p class="text-sm text-gray-500">${stat.title}</p>
+      <p class="cards-number">${stat.value}</p>
+      <p class="card-title">${stat.title}</p>
     </div>
   `;
 
