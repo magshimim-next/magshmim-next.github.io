@@ -6,6 +6,7 @@
     <link rel="icon" type="image/x-icon" href="/assets/images/Logo.ico" />
     <script src=" https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js "></script>
     <link rel="stylesheet" href="styles/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body>
@@ -122,6 +123,22 @@
         </div>
       </section>
 
+      <!-- Community charts Section -->
+      <section>
+        <div class="text-block">
+          <h2 class="primary-color">Community Statistics</h2>
+          <p class="secondary-color">
+            Magshimim Next is a vibrant and active community. From engaging with
+            and celebrating our members, to hosting events and workshops, we are
+            always looking for new ways to connect, support, and grow together.
+          </p>
+        </div>
+        <div
+          id="cards-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+        ></div>
+      </section>
+
       <!-- Join Section -->
       <section>
         <div class="text-block">
@@ -158,6 +175,7 @@
   </body>
 
   <script type="module" src="scripts/CommunityCharts.js"></script>
+  <script src="scripts/stats.js"></script>
 </html>
 
 <!--Never Forget "Yori the bear"-->
