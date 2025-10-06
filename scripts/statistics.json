@@ -2,25 +2,25 @@
   "data": [
     {
       "label": ["Technological", "military services"],
-      "count": 957,
+      "count": 50,
       "background": "#748560AA",
       "borderColor": "#a8b393ff"
     },
     {
       "label": "Founders",
-      "count": 26,
+      "count": 3,
       "background": "#F0C552AA",
       "borderColor": "#FFFFFFA0"
     },
     {
       "label": ["Developers &", "Researchers"],
-      "count": 863,
+      "count": 43,
       "background": "#7086FDAA",
       "borderColor": "#FFFFFFA0"
     },
     {
       "label": "Academics",
-      "count": 675,
+      "count": 34,
       "background": "#1B263AAA",
       "borderColor": "#FFFFFFA0"
     }
