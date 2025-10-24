@@ -15,19 +15,19 @@ const statsCards = [
   },
   {
     title: "Tech Events",
-    value: "542",
+    value: "42",
     icon: "Code",
     color: "purple-500",
   },
   {
     title: "Entrepreneurship Events",
-    value: "67",
+    value: "13",
     icon: "Entrepreneurship",
     color: "blue-500",
   },
   {
     title: "Overall Posts",
-    value: "2,156",
+    value: "102",
     icon: "MessageSquare",
     color: "green-500",
   },
@@ -37,8 +37,7 @@ const container = document.getElementById("cards-container");
 
 statsCards.forEach((stat) => {
   const card = document.createElement("div");
-  card.className =
-    "card-background";
+  card.className = "card-background";
 
   card.innerHTML = `
     <div class="card-img">
