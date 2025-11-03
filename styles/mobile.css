@@ -1,0 +1,45 @@
+/*  Mobile version style of the page  */
+
+
+.top-bar .links-logos img {
+  visibility: collapse;
+}
+
+.top-bar .logo {
+  width: auto;
+}
+
+/* Sections */
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 69vh;
+  flex-direction: column;
+}
+
+.sector-img
+{
+  background-color: red;
+  width: 85%;
+  order: 0;
+}
+
+.text-block
+{
+  max-width: 70%;
+}
+
+.text-block h2 {
+  font-size: 90px;
+}
+
+.text-block p {
+  font-size: 36px;
+  line-height: 48px;
+}
+ 
+#hero-section .links-logos
+{
+  height: 45px;
+}

@@ -339,12 +339,12 @@ section:nth-child(odd) {
   background-color: white;
   padding: 20px;
   text-align: center;
+  transition: all 0.3s ease;
 }
 
 .card-background:hover {
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   transform: translateY(-10px);
-  transition: all 0.3s ease;
 }
 
 .card-img {
