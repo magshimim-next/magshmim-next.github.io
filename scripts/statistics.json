@@ -7,12 +7,6 @@
       "borderColor": "#a8b393ff"
     },
     {
-      "label": "Founders",
-      "count": 6,
-      "background": "#F0C552AA",
-      "borderColor": "#FFFFFFA0"
-    },
-    {
       "label": ["Developers &", "Researchers"],
       "count": 43,
       "background": "#7086FDAA",
@@ -22,6 +16,12 @@
       "label": "Academics",
       "count": 34,
       "background": "#1B263AAA",
+      "borderColor": "#FFFFFFA0"
+    },
+    {
+      "label": "Founders",
+      "count": 6,
+      "background": "#F0C552AA",
       "borderColor": "#FFFFFFA0"
     }
   ]

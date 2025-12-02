@@ -363,11 +363,17 @@ section:nth-child(odd) {
 .community-graphs {
   width: 45%;
   max-width: 100%;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
 
 .community-graphs canvas {
   max-width: 100%;
   height: auto !important;
+  display: block;
 }
 
 /* Statistics Cards */
@@ -742,6 +748,7 @@ section:nth-child(odd) {
     width: 100%;
     order: 2;
     margin-top: 20px;
+    padding: 15px;
   }
 
   /* Statistics cards */
