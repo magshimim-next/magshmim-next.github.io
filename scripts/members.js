@@ -46,6 +46,7 @@ const members = [
     role: "CTO",
     company: "Team8 Capital",
     image: "assets/images/members/sharon-shmueli.jpg",
+    achievement: "Speaker @ Black Hat & RSAC",
   },
   {
     name: "Yahav Ohana",
