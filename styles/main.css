@@ -255,8 +255,9 @@ section:nth-child(odd) {
 /* Donation Box styling */
 .donation-box {
   background: linear-gradient(135deg, #f4f4f4 0%, #e8f4f8 100%);
-  width: 45vmin;
-  padding: 40px 5vmin;
+  width: 45%;
+  max-width: 500px;
+  padding: 40px 35px;
   border: 3px solid #457b9d;
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -265,27 +266,46 @@ section:nth-child(odd) {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  box-sizing: border-box;
+}
+
+.support-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.support-text h2 {
+  text-align: center;
+}
+
+.support-text p {
+  text-align: center;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .donation-box h1 {
-  font-size: 5vmin;
+  font-size: 36px;
   margin: 0;
 }
 
 .donation-text {
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 26px;
   color: #457b9d;
   margin: 0;
-  max-width: 90%;
+  max-width: 95%;
 }
 
 .donation-button {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px 40px;
-  font-size: 22px;
+  gap: 10px;
+  padding: 14px 36px;
+  font-size: 20px;
   font-weight: bold;
   background: linear-gradient(135deg, #8098c6 0%, #457b9d 100%);
   border: 3px solid #0b4870;
@@ -295,6 +315,7 @@ section:nth-child(odd) {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
 }
 
 .donation-button:hover {
@@ -308,17 +329,21 @@ section:nth-child(odd) {
 }
 
 .heart-icon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   color: #ff6b9d;
 }
 
 .donation-footer {
-  font-size: 14px;
+  font-size: 13px;
   color: #457b9d;
   font-style: italic;
   margin: 0;
   opacity: 0.8;
+}
+
+.join-img {
+  margin-top: 25px;
 }
 
 /* Spacing for fixed header */
