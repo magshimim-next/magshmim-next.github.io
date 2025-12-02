@@ -372,8 +372,8 @@ section:nth-child(odd) {
 
 .community-graphs canvas {
   max-width: 100%;
-  height: auto !important;
   display: block;
+  min-height: 320px;
 }
 
 /* Statistics Cards */
@@ -998,5 +998,17 @@ section:nth-child(odd) {
 
   .donation-footer {
     font-size: 12px;
+  }
+
+  /* Ensure chart labels are always visible on mobile */
+  .community-graphs {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 450px;
+    padding: 16px;
+  }
+
+  .community-graphs canvas {
+    min-height: 400px !important;
   }
 }
