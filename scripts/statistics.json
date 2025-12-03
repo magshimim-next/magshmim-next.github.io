@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "label": ["Technological", "military services"],
+      "count": 50,
+      "background": "#748560AA",
+      "borderColor": "#a8b393ff"
+    },
+    {
+      "label": ["Developers &", "Researchers"],
+      "count": 43,
+      "background": "#7086FDAA",
+      "borderColor": "#FFFFFFA0"
+    },
+    {
+      "label": "Academics",
+      "count": 34,
+      "background": "#1B263AAA",
+      "borderColor": "#FFFFFFA0"
+    },
+    {
+      "label": "Founders",
+      "count": 6,
+      "background": "#F0C552AA",
+      "borderColor": "#FFFFFFA0"
+    }
+  ]
+}
