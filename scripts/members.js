@@ -22,13 +22,6 @@ const members = [
     achievement: "Featured in Forbes 30 Under 30",
   },
   {
-    name: "Yair Ladizhensky",
-    role: "Co-Founder & CPO",
-    company: "Aryon Security",
-    image: "assets/images/members/yair-ladizhensky.jpg",
-    achievement: "Featured in Forbes 30 Under 30",
-  },
-  {
     name: "Lior Pozin",
     role: "Co-Founder & CEO",
     company: "AutoDS (Acquired by Fiverr)",
@@ -40,13 +33,6 @@ const members = [
     role: "VP R&D",
     company: "Paragon",
     image: "assets/images/members/daniel-drizin.jpg",
-  },
-  {
-    name: "Sharon Shmueli",
-    role: "CTO",
-    company: "Team8 Capital",
-    image: "assets/images/members/sharon-shmueli.jpg",
-    achievement: "Speaker @ Black Hat & RSAC",
   },
   {
     name: "Yahav Ohana",
