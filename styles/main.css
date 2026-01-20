@@ -82,25 +82,18 @@ body {
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  flex-wrap: nowrap;
 }
 
 .top-bar .logo {
   width: 120px;
-  margin: 5px 0;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-shrink: 0;
 }
 
-.top-bar .links-logos img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  cursor: pointer;
-  display: block;
-}
-
-.logo img {
+.top-bar .logo img {
   width: 100%;
   object-fit: contain;
   cursor: pointer;
@@ -109,25 +102,65 @@ body {
 
 .actions {
   display: flex;
-  gap: 15px;
   align-items: center;
+  gap: 12px;
   flex-shrink: 0;
+  justify-content: flex-end;
+}
+
+.actions.left-aligned {
+  justify-content: flex-start;
 }
 
 .links-logos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 25px;
   width: auto;
   border-radius: 6px;
   cursor: pointer;
-  flex-shrink: 0;
-  display: inline-block;
+  flex-shrink: 1;
 }
 
 .links-logos img {
+  display: block;
   height: 100%;
   width: auto;
   object-fit: contain;
-  display: block;
+}
+
+.Magshimim-Cv-Logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 2px 6px;
+  transition: background-color 0.3s ease;
+  background-color: #457b9d;
+}
+
+.Magshimim-Cv-Logo:hover {
+  background-color: #63a5e2;
+}
+
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 8px 12px;
+  }
+
+  .top-bar .logo {
+    width: 80px;
+  }
+
+  .links-logos {
+    height: 20px;
+    padding: 0 4px;
+  }
+
+  .actions {
+    gap: 6px;
+  }
 }
 
 #hero-section .links-logos {
@@ -137,17 +170,6 @@ body {
 
 #hero-section p {
   width: 75%;
-}
-
-.Magshimim-Cv-Logo {
-  border-radius: 12px;
-  padding: 2px 6px;
-  transition: background-color 0.3s ease;
-  background-color: #457b9d;
-}
-
-.Magshimim-Cv-Logo:hover {
-  background-color: #63a5e2;
 }
 
 img {
@@ -1014,8 +1036,9 @@ section:nth-child(odd) {
 
 .svg-wrapper {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 100%; /* Fill parent */
+  max-width: 500px; /* Optional maximum size */
+  aspect-ratio: 1 / 1; /* Keeps it square or adjust to BG ratio */
 }
 
 .svg-layer {
