@@ -765,6 +765,10 @@ section:nth-child(odd) {
     margin-top: 20px;
   }
 
+  .svg-wrapper {
+    order: 2;
+  }
+
   /* Community graphs */
   .community-graphs {
     width: 100%;
