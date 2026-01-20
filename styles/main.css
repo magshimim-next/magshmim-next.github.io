@@ -863,7 +863,6 @@ section:nth-child(odd) {
   }
 
   /* Make sure target and magshimim images aren't too large */
-  .target-img,
   .magshimim-img {
     max-width: 300px;
   }
@@ -1011,4 +1010,25 @@ section:nth-child(odd) {
   .community-graphs canvas {
     min-height: 400px !important;
   }
+}
+
+.svg-wrapper {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.svg-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg {
+  pointer-events: none; /* NOT clickable */
+}
+
+.fg {
+  pointer-events: auto; /* clickable */
 }
