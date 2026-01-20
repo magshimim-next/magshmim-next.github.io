@@ -240,6 +240,13 @@ section {
   word-wrap: break-word;
 }
 
+.text-block.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 section:nth-child(odd) {
   background: #d8f0f4;
 }
