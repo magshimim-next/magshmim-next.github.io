@@ -1014,8 +1014,9 @@ section:nth-child(odd) {
 
 .svg-wrapper {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 100%; /* Fill parent */
+  max-width: 500px; /* Optional maximum size */
+  aspect-ratio: 1 / 1; /* Keeps it square or adjust to BG ratio */
 }
 
 .svg-layer {
