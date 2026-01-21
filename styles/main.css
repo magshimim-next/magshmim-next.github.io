@@ -137,11 +137,11 @@ body {
   border-radius: 12px;
   padding: 2px 6px;
   transition: background-color 0.3s ease;
-  background-color: #457b9d;
+  background-color: #1e293b;
 }
 
 .Magshimim-Cv-Logo:hover {
-  background-color: #63a5e2;
+  background-color: #5b7898;
 }
 
 @media (max-width: 480px) {
