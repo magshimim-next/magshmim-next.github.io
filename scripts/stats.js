@@ -1,34 +1,49 @@
 // Replace with actual icons or use emojis or SVGs for now
 const icons = {
   Users: "👥",
-  Code: "💻",
+  events: "🎙️",
   MessageSquare: "💬",
-  Entrepreneurship: "🚀",
+  Rocket: "🚀",
 };
+
+const startDate = new Date(2022, 11);
+const now = new Date();
+let months =
+  (now.getFullYear() - startDate.getFullYear()) * 12 +
+  (now.getMonth() - startDate.getMonth());
+if (now.getDate() < startDate.getDate()) months--;
+months += 1;
+const years = Math.floor(months / 12);
+const remMonths = months % 12;
+let activityString = "";
+if (years > 0) activityString += `${years} Year${years > 1 ? "s" : ""}`;
+if (remMonths > 0)
+  activityString += `${activityString ? " " : ""}${remMonths} Month${remMonths > 1 ? "s" : ""}`;
+if (!activityString) activityString = "<1 Month";
 
 const statsCards = [
   {
     title: "Total Members",
-    value: "1980",
+    value: "4012",
     icon: "Users",
     color: "blue-500",
   },
   {
-    title: "Tech Events",
-    value: "42",
-    icon: "Code",
+    title: "Community Events",
+    value: "46",
+    icon: "events",
     color: "purple-500",
   },
   {
-    title: "Entrepreneurship Events",
-    value: "13",
-    icon: "Entrepreneurship",
+    title: "Community Formus",
+    value: "15",
+    icon: "MessageSquare",
     color: "blue-500",
   },
   {
-    title: "Overall Posts",
-    value: "102",
-    icon: "MessageSquare",
+    title: "Years of Activity",
+    value: activityString,
+    icon: "Rocket",
     color: "green-500",
   },
 ];
