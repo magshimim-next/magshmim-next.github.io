@@ -1,3 +1,99 @@
+/* Language Switcher: Smaller default size */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(200, 200, 200, 0.18);
+  transition: all 0.3s ease;
+  user-select: none;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  font-size: 13px;
+  min-width: unset;
+  min-height: unset;
+}
+
+.language-switcher-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.language-options {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #457b9d;
+}
+
+.language-switcher-indicator {
+  margin-left: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.globe-icon {
+  width: 13px;
+  height: 13px;
+  color: #457b9d;
+}
+/* Direction-aware alternation for RTL/LTR */
+:dir(rtl) .section-row {
+  flex-direction: row-reverse;
+}
+:dir(rtl) .section-row-reverse {
+  flex-direction: row;
+}
+/* Alternating infographic layout */
+.section-row,
+.section-row-reverse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.section-row {
+  flex-direction: row;
+}
+.section-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .section-row,
+  .section-row-reverse {
+    flex-direction: column !important;
+    gap: 16px;
+    text-align: center;
+  }
+  .section-row .text-block,
+  .section-row-reverse .text-block {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Hero section flex */
+#hero-section .hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+@media (max-width: 900px) {
+  #hero-section .hero-content {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 /* Fix for horizontal scrolling/moveable content */
@@ -106,6 +202,7 @@ body {
   gap: 12px;
   flex-shrink: 0;
   justify-content: flex-end;
+  flex-direction: row !important; /* Always keep button order as in HTML, even in RTL */
 }
 
 .actions.left-aligned {
@@ -218,6 +315,7 @@ section {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  gap: 40px; /* Add spacing between text and graphics */
 }
 
 .text-block {
@@ -594,6 +692,7 @@ section:nth-child(odd) {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   margin: 20px 0;
 }

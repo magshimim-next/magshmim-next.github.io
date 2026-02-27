@@ -1,12 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Magshimim Next</title>
+    <title data-i18n="hero.title">Magshimim Next</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/Logo.ico" />
     <script src=" https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js "></script>
     <link rel="stylesheet" href="styles/main.css?v=2" />
+    <link rel="stylesheet" href="styles/rtl.css" id="rtl-styles" disabled />
   </head>
 
   <body>
@@ -17,6 +18,7 @@
           <img
             src="assets/images/Magshimim-next-logo.png"
             alt="Magshimim Next Logo"
+            data-i18n="nav.alt_logo"
           />
         </div>
         <div class="actions">
@@ -24,19 +26,31 @@
             href="https://cv.magshimim-next.com/"
             class="links-logos Magshimim-Cv-Logo"
           >
-            <img src="assets/images/Magshimim-CV-Logo.png" alt="Magshimim CV" />
+            <img
+              src="assets/images/Magshimim-CV-Logo.png"
+              alt="Magshimim CV"
+              data-i18n="nav.alt_cv"
+            />
           </a>
           <a
             href="https://www.instagram.com/magshimim.next/"
             class="links-logos"
           >
-            <img src="assets/images/instagram-logo.png" alt="Instagram" />
+            <img
+              src="assets/images/instagram-logo.png"
+              alt="Instagram"
+              data-i18n="nav.alt_instagram"
+            />
           </a>
           <a
             href="https://www.linkedin.com/company/magshimim-next"
             class="links-logos"
           >
-            <img src="assets/images/linkedin-logo.png" alt="LinkedIn" />
+            <img
+              src="assets/images/linkedin-logo.png"
+              alt="LinkedIn"
+              data-i18n="nav.alt_linkedin"
+            />
           </a>
           <!--<button>Login</button>-->
         </div>
@@ -45,48 +59,74 @@
       <div class="spacer"></div>
 
       <!-- Hero Section -->
-      <section id="hero-section">
-        <div class="text-block">
-          <h2>
-            <span class="primary-color">Magshimim</span>
-            <span class="snow-color">Next</span>
-          </h2>
-          <p class="secondary-color">
-            A community for alumni of "Magshimim", the Israeli Cyber Education
-            Center's program.
-          </p>
-
-          <div class="actions left-aligned">
-            <a
-              href="https://cv.magshimim-next.com/"
-              class="links-logos Magshimim-Cv-Logo"
-            >
-              <img
-                src="assets/images/Magshimim-CV-Logo.png"
-                alt="Magshimim CV"
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/magshimim.next/"
-              class="links-logos"
-            >
-              <img src="assets/images/instagram-logo.png" alt="Instagram" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/magshimim-next"
-              class="links-logos"
-            >
-              <img src="assets/images/linkedin-logo.png" alt="LinkedIn" />
-            </a>
+      <section id="hero-section" class="section-row">
+        <div class="hero-content flex-row">
+          <div class="text-block">
+            <h2 data-i18n="hero.title">
+              <span class="primary-color">Magshimim</span>
+              <span class="snow-color">Next</span>
+            </h2>
+            <p class="secondary-color" data-i18n="hero.subtitle">
+              A community for alumni of "Magshimim", the Israeli Cyber Education
+              Center's program.
+            </p>
+            <div class="actions left-aligned">
+              <a
+                href="https://cv.magshimim-next.com/"
+                class="links-logos Magshimim-Cv-Logo"
+              >
+                <img
+                  src="assets/images/Magshimim-CV-Logo.png"
+                  alt="Magshimim CV"
+                  data-i18n="nav.alt_cv"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/magshimim.next/"
+                class="links-logos"
+              >
+                <img
+                  src="assets/images/instagram-logo.png"
+                  alt="Instagram"
+                  data-i18n="nav.alt_instagram"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/magshimim-next"
+                class="links-logos"
+              >
+                <img
+                  src="assets/images/linkedin-logo.png"
+                  alt="LinkedIn"
+                  data-i18n="nav.alt_linkedin"
+                />
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="image-box hero-img">
-          <img src="assets/SVGs/developer-team.svg" alt="Developer Team" />
+          <div class="image-box hero-img">
+            <img src="assets/SVGs/developer-team.svg" alt="Developer Team" />
+          </div>
         </div>
       </section>
 
       <!-- Target Section -->
-      <section>
+      <section class="section-row-reverse">
+        <div class="text-block">
+          <h2 class="highlight-primary-color">
+            <span data-i18n="target.heading">Our</span>
+            <span
+              class="highlight-secondary-color"
+              data-i18n="target.heading_highlight"
+              >Target</span
+            >
+          </h2>
+          <p class="secondary-color" data-i18n="target.description">
+            At Magshimim Next, our mission is to build a supportive community
+            for graduates of the Magshimim program, helping them navigate
+            everyday challenges, especially in areas like work, career
+            development, and education.
+          </p>
+        </div>
         <div class="svg-wrapper">
           <object
             data="assets//SVGs/blob.svg"
@@ -100,24 +140,15 @@
             alt="FG"
           />
         </div>
-        <div class="text-block">
-          <h2 class="highlight-primary-color">
-            Our <span class="highlight-secondary-color">Target</span>
-          </h2>
-          <p class="secondary-color">
-            At Magshimim Next, our mission is to build a supportive community
-            for graduates of the Magshimim program, helping them navigate
-            everyday challenges, especially in areas like work, career
-            development, and education.
-          </p>
-        </div>
       </section>
 
       <!-- Magshimim Section -->
-      <section>
+      <section class="section-row">
         <div class="text-block">
-          <h2 class="highlight-primary-color">Magshimim</h2>
-          <p class="secondary-color">
+          <h2 class="highlight-primary-color" data-i18n="magshimim.heading">
+            Magshimim
+          </h2>
+          <p class="secondary-color" data-i18n="magshimim.description">
             Launched in 2010,
             <a
               href="https://www.magshimim.cyber.org.il/"
@@ -132,31 +163,39 @@
           </p>
         </div>
         <div class="image-box magshimim-img">
-          <img src="assets/images/Magshmim-logo.png" alt="Magshimim Logo" />
+          <img
+            src="assets/images/Magshmim-logo.png"
+            alt="Magshimim Logo"
+            data-i18n="magshimim.alt_logo"
+          />
         </div>
       </section>
 
       <!-- Community charts Section -->
-      <section>
-        <div class="community-graphs">
-          <canvas id="myChart"> </canvas>
-        </div>
+      <section class="section-row-reverse">
         <div class="text-block">
-          <h2 class="primary-color">The Community</h2>
-          <p class="secondary-color">
+          <h2 class="primary-color" data-i18n="community.heading">
+            The Community
+          </h2>
+          <p class="secondary-color" data-i18n="community.description">
             Magshimim Next is made up of individuals from across Israel,
             representing a wide range of backgrounds and experiences, including
             soldiers and veterans of technological units, startup founders,
             academic professionals, and top-tier developers and researchers.
           </p>
         </div>
+        <div class="community-graphs">
+          <canvas id="myChart"> </canvas>
+        </div>
       </section>
 
       <!-- Community stats Section -->
-      <section>
+      <section class="section-row">
         <div class="text-block">
-          <h2 class="primary-color">Community Statistics</h2>
-          <p class="secondary-color">
+          <h2 class="primary-color" data-i18n="stats.heading">
+            Community Statistics
+          </h2>
+          <p class="secondary-color" data-i18n="stats.description">
             Magshimim Next is a vibrant and active community. From engaging with
             and celebrating our members, to hosting events and workshops, we are
             always looking for new ways to connect, support, and grow together.
@@ -166,35 +205,49 @@
       </section>
 
       <!-- Our Members Section -->
-      <section>
-        <div id="members-container"></div>
+      <section class="section-row-reverse">
         <div class="text-block">
-          <h2 class="primary-color">Our Members</h2>
-          <p class="secondary-color">
+          <h2 class="primary-color" data-i18n="members.heading">Our Members</h2>
+          <p class="secondary-color" data-i18n="members.description">
             Our community is made up of exceptional individuals who are leading
             the way in tech, cybersecurity, and innovation. From senior
             engineers at top companies to successful startup founders, our
             members are shaping the future of technology.
           </p>
         </div>
+        <div id="members-container"></div>
       </section>
 
       <!-- Support Section -->
       <section>
         <div class="text-block centered">
-          <h2 class="primary-color center-text">Support Our Community</h2>
-          <p class="secondary-color center-text">
+          <h2 class="primary-color center-text" data-i18n="support.heading">
+            Support Our Community
+          </h2>
+          <p
+            class="secondary-color center-text"
+            data-i18n="support.description"
+          >
             Help us continue building and supporting the next generation of tech
             leaders. Your contribution enables us to host more events, provide
             mentorship programs, and create opportunities for our members.
           </p>
           <div class="image-box center join-img">
-            <img src="assets/SVGs/business-agreement.svg" alt="Support Us" />
+            <img
+              src="assets/SVGs/business-agreement.svg"
+              alt="Support Us"
+              data-i18n="support.alt_support"
+            />
           </div>
         </div>
         <div class="donation-box">
-          <h1 class="highlight-primary-color">Make a Difference</h1>
-          <p class="donation-text">
+          <h1
+            class="highlight-primary-color"
+            data-i18n="support.make_difference"
+          >
+            Make a Difference
+          </h1>
+          <p class="donation-text" data-i18n="support.donation_text">
             Every donation, big or small, helps us empower Magshimim alumni to
             reach their full potential in the tech industry.
           </p>
@@ -209,14 +262,18 @@
                 d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
               ></path>
             </svg>
-            Donate Now
+            <span data-i18n="support.donate_button">Donate Now</span>
           </a>
-          <p class="donation-footer">Thank you for supporting our community!</p>
+          <p class="donation-footer" data-i18n="support.donation_footer">
+            Thank you for supporting our community!
+          </p>
         </div>
       </section>
     </div>
   </body>
 
+  <script type="module" src="js/i18n.js"></script>
+  <script type="module" src="js/language-switcher.js"></script>
   <script type="module" src="scripts/CommunityCharts.js"></script>
   <script src="scripts/stats.js"></script>
   <script src="scripts/members.js"></script>

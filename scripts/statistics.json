@@ -1,26 +1,26 @@
 {
   "data": [
     {
-      "label": ["Technological", "military services"],
-      "count": 50,
+      "labelKey": "charts.categories.technological_military",
+      "count": 70,
       "background": "#748560AA",
       "borderColor": "#a8b393ff"
     },
     {
-      "label": ["Developers &", "Researchers"],
-      "count": 43,
+      "labelKey": "charts.categories.developers_researchers",
+      "count": 68,
       "background": "#7086FDAA",
       "borderColor": "#FFFFFFA0"
     },
     {
-      "label": "Academics",
-      "count": 34,
+      "labelKey": "charts.categories.academics",
+      "count": 48,
       "background": "#1B263AAA",
       "borderColor": "#FFFFFFA0"
     },
     {
-      "label": "Founders",
-      "count": 6,
+      "labelKey": "charts.categories.founders",
+      "count": 3,
       "background": "#F0C552AA",
       "borderColor": "#FFFFFFA0"
     }

@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "alt_logo": "Magshimim Next Logo",
+    "alt_cv": "CV Next",
+    "alt_instagram": "Instagram",
+    "alt_linkedin": "LinkedIn"
+  },
+  "hero": {
+    "title": "Magshimim Next",
+    "subtitle": "A community for alumni of \"Magshimim\", the Israeli Cyber Education Center's program."
+  },
+  "target": {
+    "heading": "Our",
+    "heading_highlight": "Target",
+    "description": "At Magshimim Next, our mission is to build a supportive community for graduates of the Magshimim program, helping them navigate everyday challenges, especially in areas like work, career development, and education."
+  },
+  "magshimim": {
+    "heading": "Magshimim",
+    "description": "Launched in 2010, <a href=\"https://www.magshimim.cyber.org.il/\" target=\"_blank\" rel=\"noopener noreferrer\">Magshimim</a> was designated as the National Cyber Program, and operates across Israel's social and geographic periphery, encouraging driven young people to pursue advanced studies in computer science and cybersecurity.",
+    "alt_logo": "Magshimim Logo"
+  },
+  "community": {
+    "heading": "The Community",
+    "description": "Magshimim Next is made up of individuals from across Israel, representing a wide range of backgrounds and experiences, including soldiers and veterans of technological units, startup founders, academic professionals, and top-tier developers and researchers."
+  },
+  "stats": {
+    "heading": "Community Statistics",
+    "description": "Magshimim Next is a vibrant and active community. From engaging with and celebrating our members, to hosting events and workshops, we are always looking for new ways to connect, support, and grow together.",
+    "total_members": "Total Members",
+    "community_events": "Community Events",
+    "community_forums": "Community Forums",
+    "years_of_activity": "Years of Activity",
+    "year": "Year",
+    "years": "Years",
+    "month": "Month",
+    "months": "Months",
+    "less_than_month": "<1 Month"
+  },
+  "members": {
+    "heading": "Our Members",
+    "description": "Our community is made up of exceptional individuals who are leading the way in tech, cybersecurity, and innovation. From senior engineers at top companies to successful startup founders, our members are shaping the future of technology.",
+    "names": {
+      "shay_shwartz": "Shay Shwartz",
+      "oran_moyal": "Oran Moyal",
+      "ariel_litmanovitch": "Ariel Litmanovitch",
+      "lior_pozin": "Lior Pozin",
+      "daniel_drizin": "Daniel Drizin",
+      "yahav_ohana": "Yahav Ohana"
+    },
+    "roles": {
+      "co_founder_ceo": "Co-Founder & CEO",
+      "co_founder_cto": "Co-Founder & CTO",
+      "vp_rd": "VP R&D"
+    },
+    "achievements": {
+      "forbes_30_under_30": "Featured in Forbes 30 Under 30"
+    },
+    "acquired_by": "Acquired by",
+    "aria_previous": "Previous member",
+    "aria_next": "Next member"
+  },
+  "charts": {
+    "dataset_label": "Percentage of community members",
+    "categories": {
+      "technological_military": ["Technological", "military service"],
+      "developers_researchers": ["Developers &", "Researchers"],
+      "academics": "Academics",
+      "founders": "Founders"
+    }
+  },
+  "support": {
+    "heading": "Support Our Community",
+    "description": "Help us continue building and supporting the next generation of tech leaders. Your contribution enables us to host more events, provide mentorship programs, and create opportunities for our members.",
+    "alt_support": "Support Us",
+    "make_difference": "Make a Difference",
+    "donation_text": "Every donation, big or small, helps us empower Magshimim alumni to reach their full potential in the tech industry.",
+    "donate_button": "Donate Now",
+    "donation_footer": "Thank you for supporting our community!"
+  },
+  "ui": {
+    "language_switcher": "Switch Language"
+  }
+}
