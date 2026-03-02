@@ -1,43 +1,51 @@
-// Members data
+// Members data with translation keys
 const members = [
   {
-    name: "Shay Shwartz",
-    role: "Co-Founder & CEO",
+    name: "Shay Shwartz", // Fallback for alt text
+    nameKey: "members.names.shay_shwartz",
+    roleKey: "Co-Founder & CEO",
     company: "Stealth",
     image: "assets/images/members/shay-shwartz.jpg",
-    achievement: "Featured in Forbes 30 Under 30",
+    achievementKey: "members.achievements.forbes_30_under_30",
   },
   {
-    name: "Oran Moyal",
-    role: "Co-Founder & CTO",
+    name: "Oran Moyal", // Fallback for alt text
+    nameKey: "members.names.oran_moyal",
+    roleKey: "Co-Founder & CTO",
     company: "Stealth",
     image: "assets/images/members/oran-moyal.jpg",
-    achievement: "Featuren in Forbes 30 Under 30",
+    achievementKey: "members.achievements.forbes_30_under_30",
   },
   {
-    name: "Ariel Litmanovitch",
-    role: "Co-Founder & CTO",
+    name: "Ariel Litmanovitch", // Fallback for alt text
+    nameKey: "members.names.ariel_litmanovitch",
+    roleKey: "Co-Founder & CTO",
     company: "Aryon Security",
     image: "assets/images/members/ariel-litmanovitch.jpg",
-    achievement: "Featured in Forbes 30 Under 30",
+    achievementKey: "members.achievements.forbes_30_under_30",
   },
   {
-    name: "Lior Pozin",
-    role: "Co-Founder & CEO",
-    company: "AutoDS (Acquired by Fiverr)",
+    name: "Lior Pozin", // Fallback for alt text
+    nameKey: "members.names.lior_pozin",
+    roleKey: "Co-Founder & CEO",
+    company: "AutoDS",
+    acquiredBy: "Fiverr",
     image: "assets/images/members/lior-pozin.jpg",
-    achievement: "Featured in Forbes 30 Under 30",
+    achievementKey: "members.achievements.forbes_30_under_30",
   },
   {
-    name: "Daniel Drizin",
-    role: "VP R&D",
+    name: "Daniel Drizin", // Fallback for alt text
+    nameKey: "members.names.daniel_drizin",
+    roleKey: "VP R&D",
     company: "Paragon",
     image: "assets/images/members/daniel-drizin.jpg",
   },
   {
-    name: "Yahav Ohana",
-    role: "Co-Founder & CTO",
-    company: "Assant (Acquired by JFrog)",
+    name: "Yahav Ohana", // Fallback for alt text
+    nameKey: "members.names.yahav_ohana",
+    roleKey: "Co-Founder & CTO",
+    company: "Assant",
+    acquiredBy: "JFrog",
     image: "assets/images/members/yahav-ohana.jpg",
   },
 ];
@@ -50,17 +58,18 @@ const awardSVG = `
   </svg>
 `;
 
-const prevArrowSVG = `
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <polyline points="15 18 9 12 15 6"></polyline>
-  </svg>
-`;
-
-const nextArrowSVG = `
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <polyline points="9 18 15 12 9 6"></polyline>
-  </svg>
-`;
+function getArrowSVGs() {
+  const isRTL = document.documentElement.dir === "rtl";
+  // In RTL, swap the arrows so they point visually correct
+  return {
+    prev: isRTL
+      ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>`
+      : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>`,
+    next: isRTL
+      ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>`
+      : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>`,
+  };
+}
 
 const briefcaseSVG = `
   <svg class="briefcase-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -71,26 +80,70 @@ const briefcaseSVG = `
 
 // Create a single member card
 function createMemberCard(member) {
-  const achievement_section = member.achievement
+  // Get translated name and role, fallback to readable name if translation missing
+  let name = member.name;
+  let role = member.role || member.roleKey;
+  let achievement = member.achievementKey;
+  if (window.i18n) {
+    const translatedName = window.i18n.translate(member.nameKey);
+    const translatedRole = window.i18n.translate(member.roleKey);
+    const translatedAchievement = member.achievementKey
+      ? window.i18n.translate(member.achievementKey)
+      : null;
+    // If translation returns the key itself or is falsy, fallback to readable
+    name =
+      translatedName &&
+      !translatedName.startsWith("members.names.") &&
+      translatedName !== member.nameKey
+        ? translatedName
+        : member.name;
+    role =
+      translatedRole &&
+      !translatedRole.startsWith("members.roles.") &&
+      translatedRole !== member.roleKey
+        ? translatedRole
+        : member.role || member.roleKey;
+    if (member.achievementKey) {
+      achievement =
+        translatedAchievement &&
+        !translatedAchievement.startsWith("members.achievements.") &&
+        translatedAchievement !== member.achievementKey
+          ? translatedAchievement
+          : "";
+    }
+  }
+
+  // Get achievement section if exists
+  const achievement_section = achievement
     ? `<div class="member-achievement">
           ${awardSVG}
-          <span>${member.achievement}</span>
+          <span>${achievement}</span>
         </div>`
     : ``;
+
+  // Handle company display with "Acquired by" if applicable
+  let companyDisplay = member.company;
+  if (member.acquiredBy) {
+    const acquiredText = window.i18n
+      ? window.i18n.translate("members.acquired_by")
+      : "Acquired by";
+    companyDisplay = `${member.company} (${acquiredText} ${member.acquiredBy})`;
+  }
+
   return `
     <div class="member-card">
       <div class="member-card-content">
         <div class="member-avatar-wrapper" style="background: linear-gradient(135deg, #0b4870, #457b9d)">
           <img src="${member.image}" alt="${member.name}" class="member-avatar-img" />
         </div>
-        
+
         <div class="member-info">
-          <h3 class="member-name">${member.name}</h3>
+          <h3 class="member-name">${name}</h3>
           <div class="member-role-container">
             ${briefcaseSVG}
-            <p class="member-role">${member.role}</p>
+            <p class="member-role">${role}</p>
           </div>
-          <p class="member-company">${member.company}</p>
+          <p class="member-company">${companyDisplay}</p>
         </div>
 
         ${achievement_section}
@@ -105,27 +158,36 @@ function createCarousel() {
   const dotsHTML = members
     .map(
       (_, i) =>
-        `<span class="dot ${i === 0 ? "active" : ""}" data-index="${i}"></span>`
+        `<span class="dot ${i === 0 ? "active" : ""}" data-index="${i}"></span>`,
     )
     .join("");
 
+  // Get translated aria-labels
+  const prevLabel = window.i18n
+    ? window.i18n.translate("members.aria_previous")
+    : "Previous member";
+  const nextLabel = window.i18n
+    ? window.i18n.translate("members.aria_next")
+    : "Next member";
+
+  const arrows = getArrowSVGs();
   return `
     <div class="carousel-wrapper">
-      <button class="carousel-btn carousel-prev" id="prevBtn" aria-label="Previous member">
-        ${prevArrowSVG}
+      <button class="carousel-btn carousel-prev" id="prevBtn" aria-label="${prevLabel}">
+        ${arrows.prev}
       </button>
-      
+
       <div class="carousel-container">
         <div class="carousel-track" id="carouselTrack">
           ${cardsHTML}
         </div>
       </div>
-      
-      <button class="carousel-btn carousel-next" id="nextBtn" aria-label="Next member">
-        ${nextArrowSVG}
+
+      <button class="carousel-btn carousel-next" id="nextBtn" aria-label="${nextLabel}">
+        ${arrows.next}
       </button>
     </div>
-    
+
     <div class="carousel-dots" id="carouselDots">
       ${dotsHTML}
     </div>
@@ -142,23 +204,32 @@ function initCarousel() {
 
   if (!track || !prevBtn || !nextBtn) return;
 
+  // Detect RTL
+  const isRTL = document.documentElement.dir === "rtl";
+
   function updateCarousel() {
     const offset = -currentIndex * 100;
     track.style.transform = `translateX(${offset}%)`;
-
-    // Update dots
     dots.forEach((dot, i) => {
       dot.classList.toggle("active", i === currentIndex);
     });
   }
 
   function goToNext() {
-    currentIndex = (currentIndex + 1) % members.length;
+    if (isRTL) {
+      currentIndex = (currentIndex - 1 + members.length) % members.length;
+    } else {
+      currentIndex = (currentIndex + 1) % members.length;
+    }
     updateCarousel();
   }
 
   function goToPrev() {
-    currentIndex = (currentIndex - 1 + members.length) % members.length;
+    if (isRTL) {
+      currentIndex = (currentIndex + 1) % members.length;
+    } else {
+      currentIndex = (currentIndex - 1 + members.length) % members.length;
+    }
     updateCarousel();
   }
 
@@ -167,7 +238,6 @@ function initCarousel() {
     updateCarousel();
   }
 
-  // Event listeners
   nextBtn.addEventListener("click", goToNext);
   prevBtn.addEventListener("click", goToPrev);
 
@@ -182,11 +252,52 @@ function initCarousel() {
   setInterval(goToNext, 8000);
 }
 
-// Initialize when DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
+// Render members carousel
+function renderMembersCarousel() {
   const container = document.getElementById("members-container");
-  if (container) {
-    container.innerHTML = createCarousel();
-    initCarousel();
+  if (!container) return;
+
+  container.innerHTML = createCarousel();
+  initCarousel();
+}
+
+// Initialize members carousel
+function initMembersCarousel() {
+  renderMembersCarousel();
+
+  // Listen for language changes to re-render and reset carousel
+  if (window.i18n) {
+    window.i18n.onLanguageChange(() => {
+      // Always reset to first slide on language change
+      renderMembersCarousel();
+    });
   }
-});
+}
+
+// Wait for i18n to be available and initialized before rendering carousel
+async function waitForI18nAndInitCarousel() {
+  function ready() {
+    return window.i18n && typeof window.i18n.init === "function";
+  }
+  if (!ready()) {
+    let attempts = 0;
+    const maxAttempts = 20;
+    const check = () => {
+      attempts++;
+      if (ready()) {
+        window.i18n.init().then(initMembersCarousel);
+      } else if (attempts < maxAttempts) {
+        setTimeout(check, 100 * attempts);
+      }
+    };
+    check();
+  } else {
+    window.i18n.init().then(initMembersCarousel);
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", waitForI18nAndInitCarousel);
+} else {
+  waitForI18nAndInitCarousel();
+}
