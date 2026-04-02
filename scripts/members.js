@@ -48,6 +48,27 @@ const members = [
     acquiredBy: "JFrog",
     image: "assets/images/members/yahav-ohana.jpg",
   },
+  {
+    name: "May Kogan", // Fallback for alt text
+    nameKey: "members.names.may_kogan",
+    roleKey: "Co-Founder & CTO",
+    company: "Gambit Security",
+    image: "assets/images/members/may-kogan.jpg",
+  },
+  {
+    name: "Rotem Kalmi", // Fallback for alt text
+    nameKey: "members.names.rotem_kalmi",
+    roleKey: "COO",
+    company: "ZeroPort",
+    image: "assets/images/members/rotem-kalmi.jpg",
+  },
+  {
+    name: "Lavi Friedman", // Fallback for alt text
+    nameKey: "members.names.lavi_friedman",
+    roleKey: "Co-Founder & CTO",
+    company: "ZeroPort",
+    image: "assets/images/members/lavi-friedman.jpg",
+  },
 ];
 
 // SVG Icons as strings
