@@ -47,12 +47,16 @@
       "ariel_litmanovitch": "Ariel Litmanovitch",
       "lior_pozin": "Lior Pozin",
       "daniel_drizin": "Daniel Drizin",
-      "yahav_ohana": "Yahav Ohana"
+      "yahav_ohana": "Yahav Ohana",
+      "may_kogan": "May Kogan",
+      "rotem_kalmi": "Rotem Kalmi",
+      "lavi_friedman": "Lavi Friedman"
     },
     "roles": {
       "co_founder_ceo": "Co-Founder & CEO",
       "co_founder_cto": "Co-Founder & CTO",
-      "vp_rd": "VP R&D"
+      "vp_rd": "VP R&D",
+      "coo": "COO"
     },
     "achievements": {
       "forbes_30_under_30": "Featured in Forbes 30 Under 30"
