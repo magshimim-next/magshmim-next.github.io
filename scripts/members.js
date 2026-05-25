@@ -4,7 +4,7 @@ const members = [
     name: "Shay Shwartz", // Fallback for alt text
     nameKey: "members.names.shay_shwartz",
     roleKey: "Co-Founder & CEO",
-    company: "Stealth",
+    company: "Ocean Security",
     image: "assets/images/members/shay-shwartz.jpg",
     achievementKey: "members.achievements.forbes_30_under_30",
   },
@@ -12,7 +12,7 @@ const members = [
     name: "Oran Moyal", // Fallback for alt text
     nameKey: "members.names.oran_moyal",
     roleKey: "Co-Founder & CTO",
-    company: "Stealth",
+    company: "Ocean Security",
     image: "assets/images/members/oran-moyal.jpg",
     achievementKey: "members.achievements.forbes_30_under_30",
   },
