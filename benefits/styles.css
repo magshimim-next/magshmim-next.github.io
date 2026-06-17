@@ -1,0 +1,106 @@
+/* Override the global section min-height (80vh) — benefits rows don't need full-screen height */
+#benefits-hero,
+.section-row,
+.section-row-reverse {
+  min-height: auto;
+}
+
+/* Hero */
+#benefits-hero {
+  background-image: linear-gradient(to right, #a5d6d8, #81a7a9);
+  min-height: 40vh;
+}
+
+/* Branded text logo boxes (stand in for company logos) */
+.benefit-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  min-height: 150px;
+  border-radius: 16px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 24px;
+  word-break: break-word;
+}
+
+.riseup-logo {
+  background: linear-gradient(135deg, #1a3c5e, #2d6a9f);
+  color: #ffffff;
+}
+
+.infinitylabs-logo {
+  background: linear-gradient(135deg, #0b4870, #457b9d);
+  color: #ffffff;
+}
+
+/* Primary CTA button (RiseUp Sign Up) */
+.benefit-cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #0b4870;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+.benefit-cta-button:hover {
+  background: #457b9d;
+}
+
+/* Infinity Labs channel buttons row */
+.benefit-channels {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.benefit-channel-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+}
+
+.benefit-channel-button:hover {
+  opacity: 0.85;
+}
+
+.benefit-channel-button.whatsapp {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.benefit-channel-button.social {
+  background: #e1306c;
+  color: #ffffff;
+}
+
+.benefit-channel-button.email {
+  background: #457b9d;
+  color: #ffffff;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .benefit-logo-box {
+    min-width: 120px;
+    font-size: 1.2rem;
+    min-height: 100px;
+  }
+
+  .benefit-channels {
+    justify-content: center;
+  }
+}
