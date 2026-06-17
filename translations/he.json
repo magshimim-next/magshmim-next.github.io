@@ -84,5 +84,11 @@
   },
   "ui": {
     "language_switcher": "החלף שפה"
+  },
+  "footer": {
+    "copyright": "מגשימים נקסט. כל הזכויות שמורות.",
+    "privacy_policy": "מדיניות פרטיות",
+    "terms_of_service": "תנאי שימוש",
+    "accessibility_notice": "הצהרת נגישות"
   }
 }
