@@ -327,16 +327,23 @@ class LanguageSwitcher {
 
 // Initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", async () => {
-  // Wait for i18n to be ready
-  if (window.i18n) {
+  if (!window.i18n) {
+    console.error("Language switcher: i18n failed to load");
+    return;
+  }
+
+  // Show the switcher right away. It only needs the current language, which
+  // is known before any translation file is downloaded. It used to be added
+  // only after i18n.init() finished fetching translations, so on a slow
+  // connection the switcher was missing until that fetch finished.
+  const switcher = new LanguageSwitcher(window.i18n);
+  switcher.init();
+  window.languageSwitcher = switcher;
+
+  try {
     await window.i18n.init();
-
-    // Create and initialize language switcher
-    const switcher = new LanguageSwitcher(window.i18n);
-    switcher.init();
-
-    // Make switcher globally available
-    window.languageSwitcher = switcher;
+  } catch (error) {
+    console.error("Language switcher: i18n init failed:", error);
   }
 });
 
