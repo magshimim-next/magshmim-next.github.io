@@ -38,6 +38,7 @@ const members = [
     nameKey: "members.names.daniel_drizin",
     roleKey: "VP R&D",
     company: "Paragon",
+    achievementKey: "members.achievements.forbes_30_under_30",
     image: "assets/images/members/daniel-drizin.jpg",
   },
   {
@@ -68,6 +69,13 @@ const members = [
     roleKey: "Co-Founder & CTO",
     company: "ZeroPort",
     image: "assets/images/members/lavi-friedman.jpg",
+  },
+  {
+    name: "Udi Doron", // Fallback for alt text
+    nameKey: "members.names.udi_doron",
+    roleKey: "VP R&D",
+    company: "Echo",
+    image: "assets/images/members/udi-doron.png",
   },
 ];
 
