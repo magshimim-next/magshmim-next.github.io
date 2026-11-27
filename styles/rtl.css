@@ -230,6 +230,11 @@
   flex-direction: row-reverse;
 }
 
+/* Match the dots to the track, which row-reverse lays out left to right */
+[dir="rtl"] .carousel-dots {
+  flex-direction: row-reverse;
+}
+
 [dir="rtl"] .member-card-content {
   text-align: center; /* Keep member cards centered */
 }
