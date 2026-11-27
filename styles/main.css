@@ -744,6 +744,7 @@ section:nth-child(odd) {
 
 .carousel-track {
   display: flex;
+  flex-direction: row-reverse;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -781,6 +782,7 @@ section:nth-child(odd) {
 /* Carousel Dots */
 .carousel-dots {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: center;
   gap: 8px;
   margin-top: 15px;

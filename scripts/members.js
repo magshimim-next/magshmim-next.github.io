@@ -240,7 +240,8 @@ function initCarousel() {
   const isRTL = document.documentElement.dir === "rtl";
 
   function updateCarousel() {
-    const offset = -currentIndex * 100;
+    // LTR lays the track out right to left (row-reverse), so it shifts the other way
+    const offset = (isRTL ? -1 : 1) * currentIndex * 100;
     track.style.transform = `translateX(${offset}%)`;
     dots.forEach((dot, i) => {
       dot.classList.toggle("active", i === currentIndex);
