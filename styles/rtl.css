@@ -46,8 +46,12 @@
   flex-direction: row !important;
 }
 
+/* Keep the buttons in the same left-to-right order as the top bar (and English),
+   pushed to the right edge so they line up with the right-aligned text.
+   !important is needed to beat the [dir="rtl"] .actions rule above. */
 [dir="rtl"] .actions.left-aligned {
-  justify-content: flex-end; /* Flipped from flex-start */
+  direction: ltr;
+  justify-content: flex-end !important;
 }
 
 /* ===================================
@@ -55,7 +59,7 @@
    =================================== */
 
 [dir="rtl"] #hero-section {
-  background: linear-gradient(to left, #a5d6d8, #81a7a9); /* Flipped gradient */
+  /* Gradient intentionally not flipped, so it matches the English page */
   flex-direction: row-reverse;
 }
 
@@ -64,7 +68,8 @@
 }
 
 [dir="rtl"] #hero-section .actions {
-  justify-content: flex-end; /* Align to right for Hebrew */
+  direction: ltr; /* Same button order as the top bar */
+  justify-content: flex-end !important; /* Right edge, aligned with the text */
 }
 
 [dir="rtl"] #hero-section .image-box {
@@ -225,6 +230,11 @@
   flex-direction: row-reverse;
 }
 
+/* Match the dots to the track, which row-reverse lays out left to right */
+[dir="rtl"] .carousel-dots {
+  flex-direction: row-reverse;
+}
+
 [dir="rtl"] .member-card-content {
   text-align: center; /* Keep member cards centered */
 }
@@ -288,22 +298,15 @@
 
   [dir="rtl"] section {
     flex-direction: column;
-    text-align: right;
   }
 
   [dir="rtl"] .text-block {
-    text-align: right;
     max-width: 100%;
     width: 100%;
   }
 
-  [dir="rtl"] .text-block.centered {
-    text-align: center;
-  }
-
   /* Hero section mobile RTL */
   [dir="rtl"] #hero-section .actions {
-    justify-content: flex-end;
     margin-top: 20px;
   }
 
@@ -311,11 +314,6 @@
   [dir="rtl"] .Statistics-cards-container {
     direction: rtl;
     grid-template-columns: 1fr 1fr;
-  }
-
-  /* Members mobile RTL */
-  [dir="rtl"] .carousel-wrapper {
-    flex-direction: row-reverse;
   }
 
   /* Community graphs mobile */
@@ -518,3 +516,26 @@
   outline: 1px solid red;
 }
 */
+
+/* Mobile: center everything, like the English layout (overrides the
+   right-aligned desktop rules above) */
+@media (max-width: 900px) {
+  [dir="rtl"] section,
+  [dir="rtl"] .text-block,
+  [dir="rtl"] #hero-section .text-block {
+    text-align: center;
+  }
+
+  [dir="rtl"] #hero-section .actions {
+    justify-content: center !important;
+  }
+
+  /* Hero: text first, image last */
+  [dir="rtl"] #hero-section .text-block {
+    order: 1;
+  }
+
+  [dir="rtl"] #hero-section .image-box {
+    order: 2;
+  }
+}

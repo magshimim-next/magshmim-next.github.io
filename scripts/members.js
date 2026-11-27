@@ -38,6 +38,7 @@ const members = [
     nameKey: "members.names.daniel_drizin",
     roleKey: "VP R&D",
     company: "Paragon",
+    achievementKey: "members.achievements.forbes_30_under_30",
     image: "assets/images/members/daniel-drizin.jpg",
   },
   {
@@ -68,6 +69,13 @@ const members = [
     roleKey: "Co-Founder & CTO",
     company: "ZeroPort",
     image: "assets/images/members/lavi-friedman.jpg",
+  },
+  {
+    name: "Udi Doron", // Fallback for alt text
+    nameKey: "members.names.udi_doron",
+    roleKey: "VP R&D",
+    company: "Echo",
+    image: "assets/images/members/udi-doron.png",
   },
 ];
 
@@ -216,6 +224,9 @@ function createCarousel() {
 }
 
 // Initialize carousel functionality
+const AUTO_ADVANCE_MS = 8000;
+let autoAdvanceTimer = null;
+
 function initCarousel() {
   let currentIndex = 0;
   const track = document.getElementById("carouselTrack");
@@ -229,7 +240,8 @@ function initCarousel() {
   const isRTL = document.documentElement.dir === "rtl";
 
   function updateCarousel() {
-    const offset = -currentIndex * 100;
+    // LTR lays the track out right to left (row-reverse), so it shifts the other way
+    const offset = (isRTL ? -1 : 1) * currentIndex * 100;
     track.style.transform = `translateX(${offset}%)`;
     dots.forEach((dot, i) => {
       dot.classList.toggle("active", i === currentIndex);
@@ -259,18 +271,33 @@ function initCarousel() {
     updateCarousel();
   }
 
-  nextBtn.addEventListener("click", goToNext);
-  prevBtn.addEventListener("click", goToPrev);
+  // Auto-advance carousel every 8 seconds
+  // Restart the countdown after manual navigation so it doesn't move mid-interaction.
+  // The timer lives at module scope so re-renders (e.g. language change) replace it
+  // instead of stacking a new interval on top of the old one.
+  function resetAutoAdvance() {
+    clearInterval(autoAdvanceTimer);
+    autoAdvanceTimer = setInterval(goToNext, AUTO_ADVANCE_MS);
+  }
+  resetAutoAdvance();
+
+  // Arrows move the cards in the opposite direction to auto-advance
+  nextBtn.addEventListener("click", () => {
+    goToPrev();
+    resetAutoAdvance();
+  });
+  prevBtn.addEventListener("click", () => {
+    goToNext();
+    resetAutoAdvance();
+  });
 
   dots.forEach((dot) => {
     dot.addEventListener("click", (e) => {
       const index = parseInt(e.target.dataset.index);
       goToSlide(index);
+      resetAutoAdvance();
     });
   });
-
-  // Auto-advance carousel every 8 seconds
-  setInterval(goToNext, 8000);
 }
 
 // Render members carousel

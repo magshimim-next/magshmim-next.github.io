@@ -33,17 +33,17 @@ class LanguageSwitcher {
     // Only show the opposite language as the button
     switcher.innerHTML = `
       <div class="language-switcher-container">
-        <div class="language-options">
-           <span class="lang-option active" data-lang="${isHebrew ? "en" : "he"}">
-            ${isHebrew ? "EN" : "עב"}
-          </span>
-        </div>
         <div class="language-switcher-indicator">
           <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="2" y1="12" x2="22" y2="12"></line>
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
           </svg>
+        </div>
+        <div class="language-options">
+           <span class="lang-option active" data-lang="${isHebrew ? "en" : "he"}">
+            ${isHebrew ? "EN" : "עב"}
+          </span>
         </div>
       </div>
     `;
@@ -89,8 +89,8 @@ class LanguageSwitcher {
         cursor: pointer;
         padding: 6px 10px;
         border-radius: 6px;
-        background: rgba(255, 255, 255, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        background: transparent;
+        border: 1px solid rgba(69, 123, 157, 0.35);
         transition: all 0.3s ease;
         user-select: none;
         backdrop-filter: blur(10px);
@@ -98,14 +98,19 @@ class LanguageSwitcher {
       }
 
       .language-switcher:hover {
-        background: rgba(255, 255, 255, 0.3);
-        border-color: rgba(255, 255, 255, 0.5);
+        background: rgba(69, 123, 157, 0.08);
+        border-color: rgba(69, 123, 157, 0.6);
         transform: translateY(-1px) scale(1.05);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
 
+      /* Show the focus ring only for keyboard navigation, not mouse clicks */
       .language-switcher:focus {
-        outline: 2px solid #7eccff;
+        outline: none;
+      }
+
+      .language-switcher:focus-visible {
+        outline: 2px solid #457b9d;
         outline-offset: 2px;
       }
 
@@ -129,14 +134,11 @@ class LanguageSwitcher {
         border-radius: 4px;
         transition: all 0.2s ease;
         cursor: pointer;
-        opacity: 0.6;
-        color: white;
+        color: #457b9d;
       }
 
       .lang-option.active {
-        opacity: 1;
-        background: rgba(255, 255, 255, 0.2);
-        color: #7eccff;
+        color: #457b9d;
         font-weight: 700;
       }
 
@@ -159,13 +161,13 @@ class LanguageSwitcher {
       .globe-icon {
         width: 14px;
         height: 14px;
-        color: rgba(255, 255, 255, 0.9);
+        color: #457b9d;
         transition: transform 0.3s ease;
       }
 
       .language-switcher:hover .globe-icon {
         transform: rotate(15deg);
-        color: #7eccff;
+        color: #0b4870;
       }
 
       .language-switcher.switching .globe-icon {
@@ -325,16 +327,23 @@ class LanguageSwitcher {
 
 // Initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", async () => {
-  // Wait for i18n to be ready
-  if (window.i18n) {
+  if (!window.i18n) {
+    console.error("Language switcher: i18n failed to load");
+    return;
+  }
+
+  // Show the switcher right away. It only needs the current language, which
+  // is known before any translation file is downloaded. It used to be added
+  // only after i18n.init() finished fetching translations, so on a slow
+  // connection the switcher was missing until that fetch finished.
+  const switcher = new LanguageSwitcher(window.i18n);
+  switcher.init();
+  window.languageSwitcher = switcher;
+
+  try {
     await window.i18n.init();
-
-    // Create and initialize language switcher
-    const switcher = new LanguageSwitcher(window.i18n);
-    switcher.init();
-
-    // Make switcher globally available
-    window.languageSwitcher = switcher;
+  } catch (error) {
+    console.error("Language switcher: i18n init failed:", error);
   }
 });
 

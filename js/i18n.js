@@ -23,13 +23,21 @@ class I18n {
    * Initialize language from localStorage or browser preference
    */
   initializeLanguage() {
-    const savedLanguage = localStorage.getItem("magshimim-next-language");
+    // localStorage can throw (blocked cookies/site data, some private modes).
+    // If it does, this whole module would fail to load and the language
+    // switcher would never appear, so treat it as "nothing saved".
+    let savedLanguage = null;
+    try {
+      savedLanguage = localStorage.getItem("magshimim-next-language");
+    } catch (error) {
+      console.warn("Could not read saved language:", error);
+    }
     if (savedLanguage && ["en", "he"].includes(savedLanguage)) {
       this.currentLanguage = savedLanguage;
     } else {
       // Auto-detect browser language
       const browserLang = navigator.language || navigator.userLanguage;
-      if (browserLang.startsWith("he")) {
+      if (browserLang && browserLang.startsWith("he")) {
         this.currentLanguage = "he";
       }
     }
@@ -143,7 +151,11 @@ class I18n {
     this.isRTL = language === "he";
 
     // Save language preference
-    localStorage.setItem("magshimim-next-language", language);
+    try {
+      localStorage.setItem("magshimim-next-language", language);
+    } catch (error) {
+      console.warn("Could not save language preference:", error);
+    }
 
     // Load translation data
     await this.loadTranslation(language);
